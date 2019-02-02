@@ -1,0 +1,120 @@
+<!--pages/lottery/lottery.wxml-->
+<view class="head">
+    <view class="prizeMsg">
+        <view class="prizepho">
+            <image src="{{showPicUrl}}{{imgPath}}"></image>
+        </view>
+        <view class="prizecs">
+            <view class="prizecof">{{info.title}}</view>
+        </view>    
+    </view>
+    <view class="condition">由发起者手动开奖</view>
+</view>
+<i-tabs current="{{ current }}" bindchange="handleChange" wx:if="{{lotteryFlag}}">
+    <i-tab key="tab1" title="开奖结果"></i-tab>
+    <i-tab key="tab2" title="图文介绍"></i-tab>
+</i-tabs>
+
+<view wx:if="{{lotteryFlag}}" hidden='{{!tabFlag}}'>
+
+  <view class="winning" wx:if="{{winnerFlag}}">
+    <view bindtap="Invitation" class="share">
+        <image src="../../images/share.png"></image>
+    </view>
+    <view class="winnIcons">
+        <image src="../../images/winn.png"></image>
+        <text>恭喜您中奖啦！</text>
+    </view>
+    <view class="winnprize">
+        
+    </view>
+  </view>
+
+
+  <view class="winning nowinn" wx:if="{{!winnerFlag}}">
+      <view bindtap="Invitation" class="share">
+          <image src="../../images/share.png"></image>
+      </view>
+      <view class="winnIcons">
+          <image src="../../images/nowinn.png" style="width:127rpx;height:75rpx;"></image>
+          <text style="color:#B3B3B3;text-shadow:none;font-weight:bold;">很遗憾，您未中奖               </text>
+      </view>
+  </view>
+
+  <view>
+      <view class="winningList">
+          <view class="winnTilte">中奖名单</view>
+          <view class="result-wrap" >
+              <view class="goodsname">{{title}}</view>
+              <view class="result-list">
+                  <view class="result-user" wx:for="{{winners}}" wx:key="key">
+                      <image src="{{item.avatarUrl}}"></image>
+                      <view class="result-nick">{{item.nickName}}</view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+
+<view class="explain" hidden='{{tabFlag}}'>
+    <view class="explaincs">
+        {{info.desc}}
+    </view>
+    <view class="explaincs" wx:if="{{info.imgList!=null}}">
+        <image mode="widthFix" src="{{showPicUrl}}{{item}}" style="width:100%;" wx:for="{{info.imgList}}" wx:key="key"></image>
+    </view>
+</view>
+<view class="havepart" wx:if="{{lotteryFlag}}">
+  <view class="havenum" hidden='{{isMore}}'>
+  感谢<text>{{total}}</text>人参与，
+  <label bindtap="more" class="havenum" style="color:#3d85c6" wx:if="{{total>0}}">查看全部 》</label>
+  </view>
+  <view class="partImg">
+      <view class="photo" wx:for="{{fansList}}" wx:key="key">
+          <image src="{{item.avatarUrl}}"></image>
+      </view>
+  </view>
+</view>
+<view wx:if="{{state==1 && !lotteryFlag}}">
+<i-button wx:if="{{canIUse}}" 
+	open-type="getUserInfo" 
+	bindgetuserinfo="bindGetUserInfo" type="error" disabled="{{status}}" shape="circle" size="large">{{lotteryText}}</i-button>
+</view>
+<view wx:if="{{state == 2 && !lotteryFlag}}">
+<i-button disabled="true" shape="circle" size="large">等待开奖</i-button>
+</view>
+<view class="havepart" wx:if="{{!lotteryFlag}}">
+    <view class="havenum" hidden='{{!isMore}}'>暂无人员参加。</view>
+    <view class="havenum" hidden='{{isMore}}'>
+    已有<text>{{total}}</text>人参加，
+    <label bindtap="more" class="havenum" style="color:#3d85c6" wx:if="{{total>0}}">查看全部 》</label>
+    </view>
+    <view class="partImg">
+        <view class="photo" wx:for="{{fansList}}" wx:key="key">
+            <image src="{{item.avatarUrl}}"></image>
+        </view>
+    </view>
+</view>
+<view style="height:140rpx;"></view>
+<view class="footer">
+    <form bindsubmit="Invitation" class="invitation" reportSubmit="true">
+        <button formType="submit">邀请好友参与</button>
+    </form>
+</view>
+
+<view bindtap="cancelLayer" class="layer" hidden="{{shareLayer}}">
+    <view class="shareLayer">
+        <form class="shareLi" reportSubmit="true">
+            <button formType="submit" openType="share">邀请好友参与</button>
+        </form>
+        <form bindsubmit="shareImg" class="shareLi" reportSubmit="true">
+            <button formType="submit">生成分享图</button>
+        </form>
+        <form bindsubmit="embed" class="shareLi" reportSubmit="true">
+            <button formType="submit">嵌入到公众号文章</button>
+        </form>
+        <view bindtap="cancelLayer" class="shareLi" style="color:#B3B3B3;">取消</view>
+    </view>
+</view>
+<canvas canvas-id='share' style='width:100vw;height:100vh;' hidden='true'></canvas>

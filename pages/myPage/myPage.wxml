@@ -1,0 +1,32 @@
+<!--pages/myPage/myPage.wxml-->
+<import src="../tabBar/tabBar.wxml"></import>
+<template is="tabBar" data="{{tabbar:tabbar}}"></template>
+<view class="head">
+    <view class="user-msg">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="integel">
+            <view class="integel-txt">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+</view>
+<view class="padd">
+    <view class="wrapn1">
+        <view class="wrapflex1">
+            <view class="flex1-tit">全部抽奖</view>
+        </view>
+        <view class="wrapflex2">
+            <navigator class="flex2-wrap" hoverClass="none" url="../history/history">
+                <view>
+                    <image src="../../images/my1.png"></image>
+                    <view>我参与的</view>
+                </view>
+            </navigator>
+            <navigator class="flex2-wrap" hoverClass="none" url="../mywinn/mywinn">
+                <view>
+                    <image src="../../images/my3.png"></image>
+                    <view>我中奖的</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

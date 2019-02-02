@@ -1,0 +1,154 @@
+/* pages/myPage/myPage.wxss */
+.head {
+    padding: 0 30rpx;
+    position: relative;
+    height: 310rpx;
+    background-color: #FE5A50;
+}
+
+.headbg {
+    height: 256rpx;
+    width: 100%;
+    display: block;
+}
+
+.user-msg {
+    display: flex;
+    align-items: center;
+    padding-top: 30rpx;
+}
+
+.user-msg image {
+    width: 120rpx;
+    height: 120rpx;
+    display: block;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 30rpx;
+}
+
+.user-msg .integel-txt {
+    color: #FFF;
+    font-size: 36rpx;
+}
+
+.user-msg .address {
+    margin-left: auto;
+    margin-right: 0;
+    color: #FFF;
+    font-size: 24rpx;
+}
+
+.padd {
+    padding: 0 30rpx;
+}
+
+.wrapn1 {
+    height: 232rpx;
+    border-radius: 8rpx;
+    margin-top: -118rpx;
+    background-color: #FFF;
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 0 10rpx 0 rgba(87,0,0,0.06);
+}
+
+.wrapflex1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    font-size: 24rpx;
+    color: #616161;
+}
+
+.wrapflex2 {
+    display: flex;
+    margin-top: 30rpx;
+    align-items: center;
+}
+
+.flex2-wrap {
+    flex: 1;
+    text-align: center;
+    color: #616161;
+    font-size: 24rpx;
+}
+
+.wrapflex2 image {
+    width: 42rpx;
+    height: 50rpx;
+    display: block;
+    margin: 0 auto 12rpx;
+}
+
+.points {
+    display: flex;
+    align-items: center;
+    height: 80rpx;
+    background: #BA3100;
+    margin-top: -7rpx;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.points button {
+    background-color: transparent;
+    padding: 0;
+    flex: 1;
+}
+
+.points view {
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    flex: 1;
+}
+
+.points .sharez {
+    border-right: 1px solid #CC866D;
+}
+
+.list {
+    background-color: #FFF;
+    margin-top: 40rpx;
+    padding: 20rpx;
+    box-shadow: 0 0 10rpx 0 rgba(87,0,0,0.06);
+    border-radius: 8rpx;
+}
+
+.list button {
+    padding: 0;
+    background-color: transparent;
+}
+
+.nav {
+    height: 110rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.nav image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 40rpx;
+}
+
+.nav .txt {
+    font-size: 28rpx;
+    color: #1C2833;
+    font-weight: bold;
+}
+
+.nav .next {
+    width: 14rpx;
+    height: 14rpx;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    transform: rotate(45deg);
+    margin-left: auto;
+    margin-right: 0;
+}

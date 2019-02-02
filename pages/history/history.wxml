@@ -1,0 +1,23 @@
+<!--pages/history/history.wxml-->
+<view class="nav">
+    <view bindtap="navSwitch" class="{{navOn==1?'on':''}}" data-id="1">已开奖</view>
+    <view bindtap="navSwitch" class="{{navOn==2?'on':''}}" data-id="2">未开奖</view>
+</view>
+
+<view class="wrap" wx:if="{{lucklist.length!=0}}">
+    <view bindtap="detail" class="lucklist" data-id="{{item.id}}" wx:for="{{lucklist}}" wx:key="key">
+        <view class="listn1">
+            <image src="{{showPicUrl}}{{item.imgUrl}}"></image>
+            <view class="who">{{item.title?item.title:''}}</view>
+        </view>
+        <view class="listn3">
+            <view class="fccc">开始时间</view>
+            <view class="f999">{{item.startTime}}</view>
+        </view>
+    </view>
+</view>            
+
+
+
+
+<view hidden="{{noData}}" style="text-align:center;" wx:else>暂无相关数据。</view>

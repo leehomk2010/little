@@ -1,0 +1,5 @@
+<!--pages/lotteryFans/lotteryFans.wxml-->
+<view class="head">{{total}} 位参与者</view>
+<image src="{{item.avatarUrl}}" style="width:38px;height:38px;margin:3px"  wx:for="{{usercodelist}}"></image>
+    
+        <view bindtap="more" style="text-align: center;line-height:80rpx;" wx:if="{{usercodelist.length>=1 && isLast==false}}">加载更多</view>

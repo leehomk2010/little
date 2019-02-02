@@ -1,0 +1,11 @@
+<view class="wrap">
+<canvas canvas-id='share' style='width:100vw;height:100vh;' hidden='true'></canvas>
+    <view class="wrapimg">
+        <image src="{{shareImgPath}}"></image>
+    </view>
+    <view class="footer">
+        <button type='primary' open-type="openSetting"
+bindopensetting='handleSetting' hidden='{{openSettingBtnHidden}}'>去授权</button>
+        <button bindtap="prese" hidden="{{saveImgBtnHidden}}">保存图片</button>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/index/index.wxml-->
+<view style="margin: 16px">{{title}}</view>
+
+
+<view class="actlist" id="{{item.id}}" wx:for="{{lotteryList}}" wx:key="key">
+  <form bindsubmit="linkFans" report-submit="true">
+    <input name="id" value='{{item.id}}' hidden='true'/>
+    <button class="button" form-type='submit'>
+            <view class="listwrap">
+                <image src="{{showPicUrl}}{{item.imgUrl}}"></image>
+                <view class="involved" wx:if="{{item.joined}}">已参与</view>
+            </view>
+            <view class="listn2">
+                <view class="prizecs">
+                    <view class="prizecof"><text>{{item.title}}</text></view>
+                </view>
+                <view class="num">
+                    <view >
+                        <text class="mode">发奖人手动开奖</text>
+                    </view>
+                </view>
+            </view>
+    </button>        
+  </form>       
+</view>
+
+
+
+<import src="../tabBar/tabBar.wxml"></import>
+<template is="tabBar" data="{{tabbar:tabbar}}"></template>
+<i-tab-bar current="{{ current }}" bindchange="handleChange" fixed="true">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="主页"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="我的"></i-tab-bar-item>
+</i-tab-bar>

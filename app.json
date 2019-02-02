@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lottery/lottery",
+    "pages/lotteryFans/lotteryFans",
+    "pages/myPage/myPage",
+    "pages/shareImg/shareImg",
+    "pages/history/history",
+    "pages/mywinn/mywinn"
+  ]
+}

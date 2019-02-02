@@ -1,0 +1,214 @@
+/* pages/lotteryFans/lotteryFans.wxss */
+.head {
+    text-align: center;
+    color: #B3B3B3;
+    font-size: 24rpx;
+    line-height: 80rpx;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    height: 150rpx;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 0 20rpx;
+}
+
+.list .photo {
+    position: relative;
+    width: 104rpx;
+    height: 104rpx;
+    flex-shrink: 0;
+    margin-right: 20rpx;
+}
+
+.photo image {
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 50%;
+}
+
+.photo .codenum {
+    width: 48rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    border-radius: 18rpx;
+    background-color: #EA4836;
+    font-size: 24rpx;
+    color: #FFF;
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+    text-align: center;
+}
+
+.codenum.dan {
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border-radius: 50%;
+}
+
+.nick {
+    color: #333;
+    font-weight: bold;
+}
+
+.yongy {
+    color: #666;
+    font-size: 24rpx;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.yongy text {
+    font-size: 32rpx;
+    color: #EA4836;
+    margin: 0 6rpx;
+}
+
+.winnrate {
+    margin-left: auto;
+    margin-right: 0;
+    width: 128rpx;
+    height: 92rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #EA4836;
+    position: relative;
+    padding-top: 36rpx;
+}
+
+.winnrate image {
+    width: 128rpx;
+    height: 92rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.winnrate .txt {
+    font-size: 16rpx;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.30);
+}
+
+.layerWrap {
+    z-index: 10000;
+    width: 95%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10rpx;
+    background-color: #FFF;
+}
+
+.layer-head {
+    font-weight: bold;
+    font-size: 32rpx;
+    padding: 30rpx 20rpx;
+}
+
+.layer-b2 {
+    height: 500rpx;
+    overflow-y: scroll;
+}
+
+.layer-body {
+    padding: 0 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.layerlist {
+    width: 96rpx;
+    height: 96rpx;
+    border-radius: 100rpx;
+    display: flex;
+    align-items: center;
+    border: 1px solid #E6E6E6;
+    margin-bottom: 20rpx;
+    padding-left: 10rpx;
+}
+
+.layerlist image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 20rpx;
+}
+
+.layerlist .zjhy {
+    color: #CCC;
+    font-size: 20rpx;
+}
+
+.layer-foot {
+    text-align: center;
+    margin-top: 20rpx;
+}
+
+.foot-tit {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.layer-foot button {
+    width: 320rpx;
+    height: 96rpx;
+    line-height: 96rpx;
+    border-radius: 100rpx;
+    background-color: #EA4836;
+    color: #FFFFFF;
+    font-size: 36rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.layerclose {
+    width: 40rpx;
+    height: 40rpx;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -20rpx;
+}
+
+.layerclose::after {
+    content: '';
+    display: block;
+    width: 20rpx;
+    height: 1px;
+    background-color: #FFF;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 20rpx;
+    left: 10rpx;
+}
+
+.layerclose::before {
+    content: '';
+    display: block;
+    width: 20rpx;
+    height: 1px;
+    background-color: #FFF;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 20rpx;
+    left: 10rpx;
+}
